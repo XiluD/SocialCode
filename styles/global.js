@@ -17,7 +17,7 @@ export const globalStyles = StyleSheet.create({
       display:'flex',
       flexWrap: 'nowrap',
       alignItems:'center',
-      marginTop:-40
+      marginTop:-42
     },
   
     loginTextInput: {
