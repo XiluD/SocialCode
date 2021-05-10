@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import Login from './components/Login';
 import Register from './components/Register';
+import WelcomeForm from './components/WelcomeForm';
 
 const LoginStack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
       }} initialRouteName="Login">
         <LoginStack.Screen options={{ headerShown: false }} name="Login" component={Login} />
         <LoginStack.Screen options={{ headerShown: false }} name="Register" component={Register} />
+        <LoginStack.Screen options={{ headerShown: false}} name = 'WelcomeForm' component={WelcomeForm} />
       </LoginStack.Navigator>
     </NavigationContainer>
   );

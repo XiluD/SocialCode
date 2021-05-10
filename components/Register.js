@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutF
 import { globalStyles } from '../styles/global';
 
 
-const Register = () => {
+const Register = ({navigation}) => {
     const [text, setText] = useState('');
 
     const changeHandler = (val) => {
@@ -55,7 +55,7 @@ const Register = () => {
                         </View>
                     </View>
 
-                    <TouchableOpacity style={globalStyles.button}>
+                    <TouchableOpacity style={globalStyles.button} onPress={() => {navigation.navigate('WelcomeForm', {formSubtitle: 'Before we start, tell us what you like!'});}}>
                         <Text style={globalStyles.buttonText}>Create Account</Text>
                     </TouchableOpacity>
                 </View>
