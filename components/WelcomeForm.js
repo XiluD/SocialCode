@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, FlatList, SafeAreaView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-const WelcomeForm = ({ route }) => {
+const WelcomeForm = ({ route, navigation }) => {
     const { formSubtitle } = route.params;
-    const [selectedId, setSelectedId] = useState(null);
     const [cards, setCards] = useState([
         {
             title: 'Python',
             subtitle: "People's choice! Easy, fast and effective",
             isSelected: false,
+            img : require('../assets/python_64px.png'),
             backgroundColor: '#7AD0FF',
             key: '1'
         },
@@ -18,6 +18,7 @@ const WelcomeForm = ({ route }) => {
             title: 'Java',
             subtitle: "People's choice! Easy, fast and effective",
             isSelected: false,
+            img : require('../assets/java_96px.png'),
             backgroundColor: '#D86666',
             key: '2'
         },
@@ -25,6 +26,7 @@ const WelcomeForm = ({ route }) => {
             title: 'Github',
             subtitle: "People's choice! Easy, fast and effective",
             isSelected: false,
+            img : require('../assets/github_64px.png'),
             backgroundColor: 'white',
             key: '3'
         },
@@ -32,67 +34,148 @@ const WelcomeForm = ({ route }) => {
             title: 'Angular',
             subtitle: "People's choice! Easy, fast and effective",
             isSelected: false,
+            img : require('../assets/angularjs_96px.png'),
             backgroundColor: '#CEFFB9',
             key: '4'
         },
         {
-            title: 'Python',
+            title: 'React',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'blue',
+            isSelected: false,
+            img : require('../assets/react_native_128px.png'),
+            backgroundColor: '#FFA1D7FF',
             key: '5'
         },
         {
             title: 'Python',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/python_64px.png'),
+            backgroundColor: '#7AD0FF',
             key: '6'
         },
         {
-            title: 'Python',
+            title: 'Java',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/java_96px.png'),
+            backgroundColor: '#D86666',
             key: '7'
         },
         {
-            title: 'Python',
+            title: 'Github',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/github_64px.png'),
+            backgroundColor: 'white',
             key: '8'
         },
         {
-            title: 'Python',
+            title: 'Angular',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/angularjs_96px.png'),
+            backgroundColor: '#CEFFB9',
             key: '9'
         },
         {
-            title: 'Python',
+            title: 'React',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/react_native_128px.png'),
+            backgroundColor: '#FFA1D7FF',
             key: '10'
         },
         {
             title: 'Python',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
+            isSelected: false,
+            img : require('../assets/python_64px.png'),
+            backgroundColor: '#7AD0FF',
             key: '11'
+        },
+        {
+            title: 'Java',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/java_96px.png'),
+            backgroundColor: '#D86666',
+            key: '12'
+        },
+        {
+            title: 'Github',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/github_64px.png'),
+            backgroundColor: 'white',
+            key: '13'
+        },
+        {
+            title: 'Angular',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/angularjs_96px.png'),
+            backgroundColor: '#CEFFB9',
+            key: '14'
+        },
+        {
+            title: 'React',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/react_native_128px.png'),
+            backgroundColor: '#FFA1D7FF',
+            key: '15'
+        },
+        {
+            title: 'React',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/react_native_128px.png'),
+            backgroundColor: '#FFA1D7FF',
+            key: '16'
         },
         {
             title: 'Python',
             subtitle: "People's choice! Easy, fast and effective",
-            backgroundColor: 'coral',
-            key: '12'
+            isSelected: false,
+            img : require('../assets/python_64px.png'),
+            backgroundColor: '#7AD0FF',
+            key: '17'
+        },
+        {
+            title: 'Java',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/java_96px.png'),
+            backgroundColor: '#D86666',
+            key: '18'
+        },
+        {
+            title: 'Github',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/github_64px.png'),
+            backgroundColor: 'white',
+            key: '19'
+        },
+        {
+            title: 'Angular',
+            subtitle: "People's choice! Easy, fast and effective",
+            isSelected: false,
+            img : require('../assets/angularjs_96px.png'),
+            backgroundColor: '#CEFFB9',
+            key: '20'
         },
     ]);
 
 
     const Card = ({ item, onPress }) => (
-        <TouchableOpacity onPress={onPress} style={[styles.tagsCard, {backgroundColor: item.isSelected ? 'blue' : 'green'}]}>
+        <TouchableOpacity activeOpacity={0.45} onPress={onPress} style={[styles.tagsCard, {backgroundColor: item.backgroundColor, opacity: item.isSelected ? 0.45 : 1}]}>
             <View style={styles.textImageTag}>
-                <Image source={require('../assets/passwordIcon.png')} style={styles.cardImage}></Image>
-                <Text style={{ fontSize: 20 }}>{item.title}</Text>
+                <Image source={item.img} style={styles.cardImage}></Image>
+                <Text style={styles.textImage}>{item.title}</Text>
             </View>
-            <Text style={{ fontSize: 10 }}>{item.subtitle}</Text>
+            <Text style={styles.textTag}>{item.subtitle}</Text>
         </TouchableOpacity>
     );
 
@@ -111,11 +194,6 @@ const WelcomeForm = ({ route }) => {
                         })
                     )
                 }}
-                /*
-                onPress={() => {setSelectedId(item.key);
-                item.isSelected = item.isSelected === true ? false: true;
-                console.log(item.key)
-                console.log(item.isSelected)}}  //Corregir con un setCards para un buen renderizado*/
             />
         );
     };
@@ -142,7 +220,9 @@ const WelcomeForm = ({ route }) => {
                         extraData={cards}
                     />
                 </SafeAreaView>
-                <Button title="Click Me!" />
+                <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Register')}}>
+                        <Text style={globalStyles.buttonText}>Confirm</Text>
+                </TouchableOpacity>
             </View>
         </TouchableWithoutFeedback>
     );
@@ -153,7 +233,7 @@ export default WelcomeForm;
 const styles = StyleSheet.create({
     subtitleContainer: {
         width: 150,
-        marginTop: -80
+        marginTop: -90
     },
 
     subtitleText: {
@@ -163,27 +243,52 @@ const styles = StyleSheet.create({
 
     tagsCardsContainer: {
         flex: 1,
-        marginTop: 15,
-        marginBottom: 30,
+        marginTop: 10,
     },
 
     tagsCard: {
         width: 150,
-        height: 110,
+        height: 105,
         margin: 10,
         borderRadius: 15,
         borderWidth: 1,
         borderColor: 'grey',
         alignItems: 'center',
     },
-
     textImageTag: {
         display:'flex',
         flexDirection: 'row',
-
+        flexWrap:'nowrap',
+        padding: 11,
+        alignItems:'center',
+    },
+    textImage: {
+        fontSize: 25,
+        marginLeft:8,
     },
     cardImage: {
-        maxWidth:15,
-        maxHeight: 15,
+        maxWidth:30,
+        maxHeight: 30,
+    },
+    textTag: {
+        fontSize: 10,
+        width: 120,
+    },
+    button: {
+      alignItems: "center",
+      paddingVertical: 15,
+      borderRadius: 30,
+      width: 280,
+      marginTop:20,
+      marginBottom: 20,
+      backgroundColor:'#1B76FF',
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
     },
 });
