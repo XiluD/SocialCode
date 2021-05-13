@@ -62,5 +62,48 @@ export const globalStyles = StyleSheet.create({
       fontWeight: 'bold',
       color:'white'
     },
-});
+    userInfoContainer: {
+      display: 'flex',
+      flexDirection:'row',
+    },
+    userInfoImage: {
+      maxWidth: 60,
+      maxHeight: 60,
+      borderWidth: 1,
+      borderColor: 'grey',
+      borderRadius: 100,
+      marginRight: 8
+    },
+    userInfoTextContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignSelf:'center',
+    },
+    feedButtonsContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+
+    feedButtonContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: 70,
+    },
+
+    feedButtonsIcons: {
+      width: 30,
+      height: 30,
+    },
+
+    feedButtonsTextContainer: {
+      marginLeft: 5,
+    },
+
+    feedIcons: {
+      flex: 1,
+      resizeMode: 'cover',
+    },
+  
+  });
   

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, FlatList, SafeAreaView, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-const WelcomeForm = ({ route, navigation }) => {
+const WelcomeTagsForm = ({ route, navigation }) => {
     const { formSubtitle } = route.params;
     const [cards, setCards] = useState([
         {
@@ -220,7 +220,7 @@ const WelcomeForm = ({ route, navigation }) => {
                         extraData={cards}
                     />
                 </SafeAreaView>
-                <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('Register')}}>
+                <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('InsidePost')}}>
                         <Text style={globalStyles.buttonText}>Confirm</Text>
                 </TouchableOpacity>
             </View>
@@ -228,7 +228,7 @@ const WelcomeForm = ({ route, navigation }) => {
     );
 }
 
-export default WelcomeForm;
+export default WelcomeTagsForm;
 
 const styles = StyleSheet.create({
     subtitleContainer: {
