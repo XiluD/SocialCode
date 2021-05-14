@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import WelcomeTagsForm from './components/WelcomeTagsForm';
 import InsidePost from './components/InsidePost';
+import CreateNewPost from './components/CreateNewPost';
 
 const LoginStack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export default function App() {
         <LoginStack.Screen options={{ headerShown: false }} name="Register" component={Register} />
         <LoginStack.Screen options={{ headerShown: false}} name = 'WelcomeTagsForm' component={WelcomeTagsForm} />
         <LoginStack.Screen options={{ headerShown: true}} name = 'InsidePost' component={InsidePost} />
+        <LoginStack.Screen options={{ headerShown: true}} name = 'CreateNewPost' component={CreateNewPost} />
       </LoginStack.Navigator>
     </NavigationContainer>
   );

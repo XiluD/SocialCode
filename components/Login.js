@@ -36,7 +36,7 @@ export default function App({navigation}) {
               onChangeText={changeHandler} />
           </View>
 
-          <TouchableOpacity style={globalStyles.button}>
+          <TouchableOpacity style={globalStyles.button} onPress={()=>{navigation.navigate('CreateNewPost')}}>
             <Text style={globalStyles.buttonText}>Login</Text>
           </TouchableOpacity>
 

@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, Vi
 import { globalStyles } from '../styles/global';
 
 const WelcomeTagsForm = ({ route, navigation }) => {
-    const { formSubtitle } = route.params;
+    const { formSubtitle, confirmBackRoute } = route.params;
     const [cards, setCards] = useState([
         {
             title: 'Python',
@@ -220,7 +220,7 @@ const WelcomeTagsForm = ({ route, navigation }) => {
                         extraData={cards}
                     />
                 </SafeAreaView>
-                <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('InsidePost')}}>
+                <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate(confirmBackRoute)}}>
                         <Text style={globalStyles.buttonText}>Confirm</Text>
                 </TouchableOpacity>
             </View>

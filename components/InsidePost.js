@@ -47,7 +47,7 @@ const InsidePost = () => {
             <ScrollView>
                 <View style={globalStyles.container}>
                     <StatusBar style="auto" />
-                    <View style={[globalStyles.userInfoContainer, { margin: 30 }]}>
+                    <View style={[globalStyles.userInfoContainer, { marginTop: 25, marginBottom: 30 }]}>
                         <Image source={require('../assets/profileImage.jpg')} style={globalStyles.userInfoImage} />
                         <View style={globalStyles.userInfoTextContainer}>
                             <Text>Patricia Conde</Text>
@@ -152,25 +152,6 @@ const InsidePost = () => {
                                 <Text style={styles.commentText}>{item.userComment}</Text>
                             </View>
                         ))}
-                        {/*
-                        <FlatList
-                            nestedScrollEnabled = {true}
-                            data={comments}
-                            renderItem={({ item }) => (
-                                <View style={[styles.commentContainer]}>
-                                    <View style={[globalStyles.userInfoContainer,
-                                         {transform: [{scale:0.8}], marginBottom: 20, marginTop: 10, marginRight: 180}]}>
-                                        <Image source={item.userImage} style={globalStyles.userInfoImage} />
-                                        <View style={globalStyles.userInfoTextContainer}>
-                                            <Text>{item.userName}</Text>
-                                            <Text>{item.userAccount}</Text>
-                                        </View>
-                                    </View>
-                                    <Text style={styles.commentText}>{item.userComment}</Text>
-                                </View>
-                            )}
-                        />
-                        */}
                     </SafeAreaView>
                 </View>
             </ScrollView>
