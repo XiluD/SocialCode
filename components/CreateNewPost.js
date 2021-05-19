@@ -22,7 +22,7 @@ const CreateNewPost = ({navigation}) => {
           }
         }
       })();
-    }, [image]);
+    }, []);
   
     const pickImage = async () => {
       let result = await ImagePicker.launchImageLibraryAsync({
@@ -105,7 +105,7 @@ const CreateNewPost = ({navigation}) => {
                         <Text style = {{fontSize:15,fontWeight:'bold'}}>Flags</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style = {styles.footerButton}>
+                    <TouchableOpacity style = {styles.footerButton} onPress={()=> {navigation.navigate('Search')}}>
                         <Image source = {require('../assets/enter_48px.png')} style = {{width: 25, height: 25, marginRight: 10}}/>
                         <Text style = {{fontSize:15,fontWeight:'bold'}}>Submit</Text>
                     </TouchableOpacity>

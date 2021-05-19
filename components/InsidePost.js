@@ -16,28 +16,28 @@ const InsidePost = () => {
             userImage: require('../assets/profileImage5.jpg'),
             userAccount: '@net_ninja',
             userComment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 😃 😃 😃.",
-            key: 1,
+            key: '1',
         },
         {
             userName: 'John Howards',
             userImage: require('../assets/profileImage4.jpg'),
             userAccount: '@pip_john',
             userComment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            key: 2,
+            key: '2',
         },
         {
             userName: 'Lil Bokeron',
             userImage: require('../assets/profileImage3.jpg'),
             userAccount: '@bokeron',
             userComment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit 💘 !",
-            key: 3,
+            key: '3',
         },
         {
             userName: 'Carla Hash',
             userImage: require('../assets/profileImage2.jpg'),
             userAccount: '@carla_h',
             userComment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            key: 4,
+            key: '4',
         },
     ]
     return (
@@ -126,7 +126,7 @@ const InsidePost = () => {
                         <Text style={styles.feedDateText}>1 Week</Text>
                     </View>
 
-                    <Text style={{ marginTop: 30, marginRight: 185, fontSize: 18, fontWeight: 'bold', }}>Comments...</Text>
+                    <Text style={{ marginTop: 30, marginRight: 185, fontSize: 18, fontWeight: 'bold'}}>Comments...</Text>
                     <View style={styles.commentInputContainer}>
                         <TextInput
                             style={styles.commentInput}
@@ -140,7 +140,7 @@ const InsidePost = () => {
 
                     <SafeAreaView>
                         {comments.map(item => (
-                            <View style={[styles.commentContainer]} key={item.key}>
+                            <View style={styles.commentContainer} key={item.key}>
                                 <View style={[globalStyles.userInfoContainer,
                                 { transform: [{ scale: 0.8 }], marginBottom: 20, marginTop: 10, marginRight: 180 }]}>
                                     <Image source={item.userImage} style={globalStyles.userInfoImage} />
