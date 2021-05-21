@@ -5,7 +5,7 @@ import { globalStyles } from '../styles/global';
 import cardsData from './cardsInfo';
 
 
-const Search = () => {
+const Search = ({navigation}) => {
     const [text, setText] = useState('');
 
     const changeHandler = (val) => {
@@ -168,7 +168,7 @@ const Search = () => {
                             data={users}
                             numColumns = {2}
                             renderItem={({item}) => (
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => navigation.navigate('Chats')}>
                                     <View style={[globalStyles.textImageTag, {transform: [{ scale: 0.8 }],paddingRight:45, marginLeft:-15}]}>
                                         <Image source={item.userImage} style={globalStyles.userInfoImage}/>
                                         <View style={globalStyles.userInfoTextContainer}>

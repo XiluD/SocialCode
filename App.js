@@ -9,6 +9,8 @@ import WelcomeTagsForm from './components/WelcomeTagsForm';
 import InsidePost from './components/InsidePost';
 import CreateNewPost from './components/CreateNewPost';
 import Search from './components/Search';
+import Chats from './components/Chats';
+import ChatsOpen from './components/ChatsOpen';
 
 const LoginStack = createStackNavigator();
 
@@ -24,6 +26,8 @@ export default function App() {
         <LoginStack.Screen options={{ headerShown: true}} name = 'InsidePost' component={InsidePost} />
         <LoginStack.Screen options={{ headerShown: true}} name = 'CreateNewPost' component={CreateNewPost} />
         <LoginStack.Screen options={{ headerShown: true}} name = 'Search' component={Search} />
+        <LoginStack.Screen options={{ headerShown: true}} name = 'Chats' component={Chats} />
+        <LoginStack.Screen options={{ headerShown: true}} name = 'ChatsOpen' component={ChatsOpen} />
       </LoginStack.Navigator>
     </NavigationContainer>
   );
