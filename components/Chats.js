@@ -94,6 +94,7 @@ const Chats = ({ navigation }) => {
         <View style={globalStyles.container}>
             <StatusBar style="auto" />
             <FlatList
+                showsVerticalScrollIndicator={false}
                 data={userChats}
                 renderItem={({item}) => (
                     <UserContainer
@@ -114,8 +115,9 @@ const styles = StyleSheet.create({
         flexWrap:'nowrap',
         justifyContent:'space-between',
         alignItems:'center',
-        width:340,
+        width:360,
         marginVertical:8,
+        marginEnd:5,
         borderBottomWidth: 1,
         borderBottomColor: 'grey'
     }
