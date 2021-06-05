@@ -6,11 +6,13 @@ import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/
 import Login from './components/Login';
 import Register from './components/Register';
 import WelcomeTagsForm from './components/WelcomeTagsForm';
+import Home from './components/Home';
 import InsidePost from './components/InsidePost';
 import CreateNewPost from './components/CreateNewPost';
 import Search from './components/Search';
 import Chats from './components/Chats';
 import ChatsOpen from './components/ChatsOpen';
+import Posts from './components/Posts';
 
 const LoginStack = createStackNavigator();
 
@@ -23,6 +25,12 @@ export default function App() {
         <LoginStack.Screen options={{ headerShown: false }} name="Login" component={Login} />
         <LoginStack.Screen options={{ headerShown: false }} name="Register" component={Register} />
         <LoginStack.Screen options={{ headerShown: false}} name = 'WelcomeTagsForm' component={WelcomeTagsForm} />
+
+        <LoginStack.Screen options={{ headerShown: true}} name = 'Home' component={Home} />
+        <LoginStack.Screen options={{ headerShown: true}} name = 'Posts' component={Posts} 
+          options={({ route }) => ({ title: route.params.name })}/>
+
+
         <LoginStack.Screen options={{ headerShown: true}} name = 'InsidePost' component={InsidePost} />
         <LoginStack.Screen options={{ headerShown: true}} name = 'CreateNewPost' component={CreateNewPost} />
         <LoginStack.Screen options={{ headerShown: true}} name = 'Search' component={Search} />

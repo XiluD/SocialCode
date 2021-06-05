@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ScrollView, ImageBackground, TextInput, SafeAreaView, FlatList } from 'react-native';
+import FeedIconsBar from './FeedIconsBar';
 import { globalStyles } from '../styles/global';
 
 const InsidePost = () => {
@@ -94,35 +95,7 @@ const InsidePost = () => {
                     </Text>
 
                     <View style={styles.bodyFooterContainer}>
-                        <View style={globalStyles.feedButtonsContainer}>
-                            <View style={globalStyles.feedButtonContainer}>
-                                <TouchableOpacity style={globalStyles.feedButtonsIcons}>
-                                    <ImageBackground
-                                        style={globalStyles.feedIcons}
-                                        source={require('../assets/heart_48px.png')}
-                                    />
-                                </TouchableOpacity>
-                                <Text style={globalStyles.feedButtonsTextContainer}>90</Text>
-                            </View>
-                            <View style={globalStyles.feedButtonContainer}>
-                                <TouchableOpacity style={globalStyles.feedButtonsIcons}>
-                                    <ImageBackground
-                                        style={globalStyles.feedIcons}
-                                        source={require('../assets/retweet_100px.png')}
-                                    />
-                                </TouchableOpacity>
-                                <Text style={globalStyles.feedButtonsTextContainer}>90</Text>
-                            </View>
-                            <View style={globalStyles.feedButtonContainer}>
-                                <TouchableOpacity style={globalStyles.feedButtonsIcons}>
-                                    <ImageBackground
-                                        style={globalStyles.feedIcons}
-                                        source={require('../assets/chat_52px.png')}
-                                    />
-                                </TouchableOpacity>
-                                <Text style={globalStyles.feedButtonsTextContainer}>90</Text>
-                            </View>
-                        </View>
+                        <FeedIconsBar/>
                         <Text style={styles.feedDateText}>1 Week</Text>
                     </View>
 

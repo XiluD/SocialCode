@@ -109,6 +109,71 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'column',
     alignSelf:'center',
   },
+
+  parentItemContainer: {
+    marginVertical: 25
+  },
+  itemContainerTitle: {
+    fontSize:25,
+    fontWeight:'bold',
+    marginBottom:8,
+    color: '#1B76FF'
+  },
+  itemsContainer:{
+    maxWidth:345,
+    borderWidth:1,
+  },
+  cardContainer:{
+    display:'flex',
+    alignItems:'center',
+    padding: 10,
+    marginRight: 15
+  },
+  cardHeaderContainer : {
+    display:'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems:'center',
+    width: 320,
+
+  },
+  cardHeaderIcon: {
+    width: 25,
+    height: 25,
+  },
+  cardInnerContainer: {
+    display: 'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    borderWidth:1,
+    borderRadius:20,
+    paddingHorizontal:15,
+    paddingVertical: 35,
+    marginBottom:10,
+  },
+  cardContainerImage: {
+    width: 125,
+    height: 125,
+    borderRadius:15,
+    marginRight:15
+  },
+  cardContainerText: {
+    display: 'flex',
+    flexDirection:'column',
+  },
+  cardContainerTextHeader: {
+    width: 150,
+    textAlign: 'justify',
+    marginBottom:10
+  },
+  cardContainerTextBody: {
+    width: 150,
+    textAlign: 'justify',
+  },
+
+
+
+
   feedButtonsContainer: {
     display: 'flex',
     flexDirection: 'row',
