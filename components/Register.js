@@ -55,7 +55,7 @@ const Register = ({navigation}) => {
                         </View>
                     </View>
 
-                    <TouchableOpacity style={globalStyles.button} onPress={() => {navigation.navigate('WelcomeTagsForm', {formSubtitle: 'Before we start, tell us what you like!', confirmBackRoute: 'InsidePost'})}}>
+                    <TouchableOpacity style={globalStyles.button} onPress={() => {navigation.navigate('WelcomeTagsForm', {formSubtitle: 'Before we start, tell us what you like!', confirmBackRoute: 'HomeTabs'})}}>
                         <Text style={globalStyles.buttonText}>Create Account</Text>
                     </TouchableOpacity>
                 </View>

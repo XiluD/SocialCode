@@ -168,7 +168,7 @@ const Search = ({navigation}) => {
                             data={users}
                             numColumns = {2}
                             renderItem={({item}) => (
-                                <TouchableOpacity onPress={() => navigation.navigate('Chats')}>
+                                <TouchableOpacity /*onPress={() => navigation.navigate('Chats')}*/>
                                     <View style={[globalStyles.textImageTag, {transform: [{ scale: 0.8 }],paddingRight:45, marginLeft:-15}]}>
                                         <Image source={item.userImage} style={globalStyles.userInfoImage}/>
                                         <View style={globalStyles.userInfoTextContainer}>

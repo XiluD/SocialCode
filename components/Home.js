@@ -140,7 +140,7 @@ const Home = ({navigation}) => {
                         data = {item.dataContainer}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        renderItem = {({item}) => (<Card cardData = {item} showHeader = {true}/>)}
+                        renderItem = {({item}) => (<Card cardData = {item} showHeader = {true} navigation = {navigation}/>)}
                         extraData = {item.dataContainer}
                         keyExtractor = {item => item.key}
                     />

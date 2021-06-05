@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutF
 import FeedIconsBar from './FeedIconsBar';
 import { globalStyles } from '../styles/global';
 
-const Card = ({cardData, showHeader}) => {
+const Card = ({cardData, showHeader, navigation}) => {
     console.log(cardData);
     return (
         <View style={globalStyles.cardContainer}>
@@ -20,7 +20,7 @@ const Card = ({cardData, showHeader}) => {
             </View>}
 
             
-            <TouchableOpacity style={globalStyles.cardInnerContainer}>
+            <TouchableOpacity style={globalStyles.cardInnerContainer}  onPress={() => navigation.navigate('InsidePost')}>
                 <Image source={require('../assets/insidePostContentImage.jpg')} style={globalStyles.cardContainerImage} />
                 <View style={globalStyles.cardContainerText}>
                     <View style={globalStyles.cardContainerTextHeader}>

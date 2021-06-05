@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { globalStyles } from '../styles/global';
 import Card from './Card';
 
-const Posts = () => {
+const Posts = ({navigation}) => {
     const data = [
         {
         dataContainer : [
@@ -149,7 +149,7 @@ const Posts = () => {
                         data = {item.dataContainer}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        renderItem = {({item}) => (<Card cardData = {item} showHeader = {false}/>)}
+                        renderItem = {({item}) => (<Card cardData = {item} showHeader = {false} navigation = {navigation}/>)}
                         extraData = {item.dataContainer}
                         keyExtractor = {item => item.key}
                     />

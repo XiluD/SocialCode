@@ -99,7 +99,7 @@ const Chats = ({ navigation }) => {
                 renderItem={({item}) => (
                     <UserContainer
                         item = {item}
-                        onPress={()=>navigation.navigate('ChatsOpen', {userTalkingWith: item})}
+                        onPress={()=>navigation.navigate('ChatsOpen', {name: item.userName, userTalkingWith: item})}
                     />
                 )}
             />
