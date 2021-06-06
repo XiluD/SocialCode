@@ -41,7 +41,7 @@ export default function App({navigation}) {
           </TouchableOpacity>
 
           <View style={styles.loginIconsContainer}>
-            <TouchableOpacity style={styles.touchableIcons} onPress={()=>{navigation.navigate('Home')}}>
+            <TouchableOpacity style={styles.touchableIcons}>
               <ImageBackground
                 source={require('../assets/googleIcon.png')}
                 style={styles.loginIcons}

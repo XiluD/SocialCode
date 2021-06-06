@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ImageBackground, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons'; 
 import Login from './components/Login';
 import Register from './components/Register';
 import WelcomeTagsForm from './components/WelcomeTagsForm';
@@ -20,44 +21,75 @@ export default function App() {
   const LoginStack = createStackNavigator();
   const Tab = createBottomTabNavigator();
   const HomeStack = createStackNavigator();
-  const ProfileStack = createStackNavigator();
+  const MyPostsStack = createStackNavigator();
   const SearchStack = createStackNavigator();
+  const ProfileStack = createStackNavigator();
   const ChatStack = createStackNavigator();
 
-  const HomeNavigation = () => {
+  const HeaderLogoutButton = ({navigation}) => (
+    <TouchableOpacity style={{
+      flex:1,
+      justifyContent:'center',
+      alignItems:'center'}}
+      onPress={() => navigation.navigate('Login')}>
+      <SimpleLineIcons name="logout" size={24} color="black" />
+    </TouchableOpacity>
+  );
+  const HomeNavigation = ({navigation}) => {
     return(
-    <HomeStack.Navigator initialRouteName="Home">
-      <HomeStack.Screen name = "Home" component={Home}/>
+    <HomeStack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign:'center'}}>
+      <HomeStack.Screen name = "Home" component={Home} options={{headerLeft: () => null, headerRight: () => (
+        <HeaderLogoutButton navigation = {navigation}/>
+      ), headerRightContainerStyle:{marginRight:15}}}/>
       <HomeStack.Screen name = 'Posts' component={Posts} 
-          options={({ route }) => ({ title: route.params.name })}/>
+          options={({ route }) => ({ title: route.params.name})}/>
       <HomeStack.Screen name = 'InsidePost' component={InsidePost}/>
     </HomeStack.Navigator>
     );
   }
 
-  const ProfileNavigation = () => {
+  const MyPostsNavigation = ({navigation}) => {
     /*return (
-      <ProfileStack.Navigator initialRouteName = "MyPosts">
-        <ProfileStack.Screen name = "MyPosts" component={MyPosts} />
-        <ProfileStack.Screen name = "CreateNewPost" component={CreateNewPost} />
-        <ProfileStack.Screen name = "WelcomeTagsForm" component={WelcomeTagsForm} />
-      </ProfileStack.Navigator>
+      <MyPostsStack.Navigator initialRouteName = "MyPosts" screenOptions={{headerTitleAlign:'center'}}>
+        <MyPostsStack.Screen name = "MyPosts" component={MyPosts} options={{headerLeft: () => null, headerRight: () => (
+          <HeaderLogoutButton navigation = {navigation}/>
+          ), headerRightContainerStyle:{marginRight:15}}}/>
+        <MyPostsStack.Screen name = "CreateNewPost" component={CreateNewPost} />
+        <MyPostsStack.Screen name = "WelcomeTagsForm" component={WelcomeTagsForm} />
+        <MyPostsStack.Screen name = "InsidePost" component={InsidePost} />
+      </MyPostsStack.Navigator>
     );*/
   }
 
-  const SearchNavigation = () => {
+  const SearchNavigation = ({navigation}) => {
     return (
-      <SearchStack.Navigator initialRouteName="Search">
-        <SearchStack.Screen name = "Search" component={Search}/>
+      <SearchStack.Navigator initialRouteName="Search" screenOptions={{headerTitleAlign:'center'}}>
+        <SearchStack.Screen name = "Search" component={Search} options={{headerLeft: () => null, headerRight: () => (
+          <HeaderLogoutButton navigation = {navigation}/>
+          ), headerRightContainerStyle:{marginRight:15}}}/>
         {/*<SearchStack.Screen name = "Profile" component={Profile}/>*/}
       </SearchStack.Navigator>
     );
   }
 
-  const ChatNavigation = () => {
+  const ProfileNavigation = ({navigation}) => {
+    /*
+    return (
+      <ProfileStack.Navigator initialRouteName="Profile" screenOptions={{headerTitleAlign:'center'}}>
+        <ProfileStack.Screen name = "Profile" component={Profile} options={{headerLeft: () => null, headerRight: () => (
+          <HeaderLogoutButton navigation = {navigation}/>
+          ), headerRightContainerStyle:{marginRight:15}}}/>
+        <ProfileStack.Screen name = "InsidePost" component={InsidePost} />
+      </ProfileStack.Navigator>
+    );*/
+  }
+
+  const ChatNavigation = ({navigation}) => {
     return(
-    <ChatStack.Navigator initialRouteName="Chats">
-      <ChatStack.Screen name = "Chats" component={Chats} />
+    <ChatStack.Navigator initialRouteName="Chats" screenOptions={{headerTitleAlign:'center'}}>
+      <ChatStack.Screen name = "Chats" component={Chats} options={{headerLeft: () => null, headerRight: () => (
+          <HeaderLogoutButton navigation = {navigation}/>
+          ), headerRightContainerStyle:{marginRight:15}}}/>
       <ChatStack.Screen name = "ChatsOpen" component={ChatsOpen} 
         options={({ route }) => ({ title: `Talking with ${route.params.name}` })}/>
     </ChatStack.Navigator>
@@ -79,7 +111,6 @@ export default function App() {
             } else if (route.name === 'ChatNavigation') {
               iconName = focused ? 'chatbubbles' : 'chatbubbles-outline';
             }
-
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
