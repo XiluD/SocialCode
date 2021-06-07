@@ -4,7 +4,6 @@ import FeedIconsBar from './FeedIconsBar';
 import { globalStyles } from '../styles/global';
 
 const Card = ({cardData, showHeader, navigation}) => {
-    console.log(cardData);
     return (
         <View style={globalStyles.cardContainer}>
 

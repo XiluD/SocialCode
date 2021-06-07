@@ -45,7 +45,7 @@ const CreateNewPost = ({navigation}) => {
         }}>
             <View style={globalStyles.container}>
             <StatusBar style="auto" />
-                <View style={[globalStyles.userInfoContainer, { marginTop: 25, marginBottom: 15 }]}>
+                <View style={[globalStyles.userInfoContainer, { marginTop: 25, marginBottom: 5 }]}>
                     <Image source={require('../assets/profileImage.jpg')} style={globalStyles.userInfoImage} />
                     <View style={globalStyles.userInfoTextContainer}>
                         <Text>Patricia Conde</Text>
@@ -96,7 +96,7 @@ const CreateNewPost = ({navigation}) => {
                         style = {styles.bodyTextInput}
                         placeholder = "Let's write something cool!..."
                         multiline
-                        numberOfLines = {15}
+                        numberOfLines = {14}
                     />
                 </View>
                 <View style = {styles.footerButtonsContainer}>
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent:'space-between',
-        width: 290
+        width: 290,
     },
 
     footerButton: {
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         borderRadius: 30,
         width: 130,
-        marginTop:20,
+        marginTop:15,
         marginBottom: 20,
         backgroundColor:'#1B76FF',
         shadowColor: "#000",

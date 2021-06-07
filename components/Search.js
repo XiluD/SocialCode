@@ -163,12 +163,12 @@ const Search = ({navigation}) => {
                 </View>
                 <View style={styles.categoriesSearchContainer}>
                     <Text style={[styles.titleContainer, {marginLeft:1}]}>Users</Text>
-                    <SafeAreaView style={{flex:1, maxHeight: 380}}>
+                    <SafeAreaView style={{flex:1, maxHeight: 340}}>
                         <FlatList
                             data={users}
                             numColumns = {2}
                             renderItem={({item}) => (
-                                <TouchableOpacity /*onPress={() => navigation.navigate('Chats')}*/>
+                                <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                                     <View style={[globalStyles.textImageTag, {transform: [{ scale: 0.8 }],paddingRight:45, marginLeft:-15}]}>
                                         <Image source={item.userImage} style={globalStyles.userInfoImage}/>
                                         <View style={globalStyles.userInfoTextContainer}>
