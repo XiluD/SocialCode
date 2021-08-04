@@ -20,7 +20,7 @@
   
 ## 📱 About the project <a name = "about"></a>
 
-Social Code is a functional prototype with a view to the future, which seeks to unite developers of all levels so that they can: share their knowledge, <br>
+Social Code is a functional prototype with a view to the future, which seeks to unite developers of all levels so that they can: share their knowledge,
 learn new things and have the opportunity to meet, collaborate and have fun with people with the same passions. 
 
 ## 👨‍💻 Frameworks/platforms involved: <a name = "frameplat"></a>
