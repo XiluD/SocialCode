@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ImageBackground } from 'react-native';
+import { Image, SafeAreaView, Text, FlatList, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { globalStyles } from '../styles/global';
 import Card from './Card';

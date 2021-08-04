@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import {Image, StyleSheet, Text, View, ScrollView, SafeAreaView, FlatList} from "react-native";
+import React from "react";
+import {Image, StyleSheet, Text, View, ScrollView, SafeAreaView} from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from "./Card";
 

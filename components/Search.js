@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ImageBackground, FlatList, SafeAreaView } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, FlatList, SafeAreaView } from 'react-native';
 import { globalStyles } from '../styles/global';
 import cardsData from './cardsInfo';
 

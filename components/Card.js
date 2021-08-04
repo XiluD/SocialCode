@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ImageBackground } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import FeedIconsBar from './FeedIconsBar';
 import { globalStyles } from '../styles/global';
 

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ScrollView, ImageBackground, TextInput, SafeAreaView, FlatList } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, ScrollView, TextInput, SafeAreaView } from 'react-native';
 import FeedIconsBar from './FeedIconsBar';
 import { globalStyles } from '../styles/global';
 

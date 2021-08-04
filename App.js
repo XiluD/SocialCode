@@ -1,17 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-  Keyboard,
-  ImageBackground,
-  Button,
-} from "react-native";
+import React from "react";
+import { TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import {
   createStackNavigator,

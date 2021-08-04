@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, SafeAreaView, Button, TextInput, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View, Keyboard, TextInput } from 'react-native';
 import { globalStyles } from '../styles/global';
 import * as ImagePicker from 'expo-image-picker';
 

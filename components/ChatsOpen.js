@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useCallback, useEffect } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
-import { globalStyles } from '../styles/global';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 const ChatsOpen = ({ route }) => {
